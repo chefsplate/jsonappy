@@ -23,4 +23,9 @@ test('provider set and get', t => {
   });
 });
 
+test('reject not found provider key', t => {
+  t.plan(1);
+  jsonappy(provider).get('foobar').catch(err => t.error(err));
+});
+
 test.onFinish(() => process.exit(0));
