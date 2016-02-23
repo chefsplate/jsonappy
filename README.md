@@ -20,16 +20,17 @@ jsonappy(buffer)
 ```
 
 ## Redis and other providers
-Supposing your provider follow getter and setter format as [node-redis](https://github.com/NodeRedis/node_redis).
+Supposing your provider follows ``get(key, callback)`` and ``set(key, value, callback)`` like [node-redis](https://github.com/NodeRedis/node_redis).
 
 ```js
 const jsonappy = require('jsonappy');
 const redis = require('redis');
-const client = jsonappy(redis.createClient({ return_buffers: true }));
+const client = redis.createClient({ return_buffers: true });
+const snappyClient = jsonappy(client);
 
-client.set('mykey', { foo: 'bar' }).then();
+snappyClient.set('mykey', { foo: 'bar' }).then();
 
-client.get('mykey')
+snappyClient.get('mykey')
   .then(data => console.log(data));
   // { foo: 'bar' }
 ```
