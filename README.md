@@ -1,7 +1,7 @@
 # jsonappy
 [Snappy](http://google.github.io/snappy/) compress JSON for Redis and other providers.
 
-[![Build Status](https://travis-ci.org/heldr/grunt-smushit.svg?branch=master)](http://travis-ci.org/heldr/datauri)
+[![Build Status](https://travis-ci.org/chefsplate/jsonappy.svg?branch=master)](http://travis-ci.org/chefsplate/jsonappy)
 
 ## Getting started
 `npm i jsonappy --save`
