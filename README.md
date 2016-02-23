@@ -34,7 +34,7 @@ client.get('mykey')
   // { foo: 'bar' }
 ```
 ## Develop
-For test proposes, please make sure to **redis-server** running.
+For test proposes, please make sure to have **redis-server** running.
 
 ```shell
 npm start
