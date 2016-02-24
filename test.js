@@ -12,7 +12,14 @@ test('encode and decode', t => {
   });
 });
 
-test('provider set and get', t => {
+test('do not decode invalid values', { timeout: 3000 }, t => {
+  t.plan(3);
+  jsonappy(null).then(data => t.equal(data, null, 'null'));
+  jsonappy(false).then(data => t.equal(data, false, 'false'));
+  jsonappy(undefined).then(data => t.equal(data, undefined, 'undefined'));
+});
+
+test('provider set and get', { timeout: 3000 }, t => {
   const expected = { foo: 'bar' };
 
   t.plan(1);
@@ -23,9 +30,9 @@ test('provider set and get', t => {
   });
 });
 
-test('reject not found provider key', t => {
+test('send provider empty values', { timeout: 3000 }, t => {
   t.plan(1);
-  jsonappy(provider).get('foobar').catch(err => t.error(err));
+  jsonappy(provider).get('ajsipdjaisopdja').then(data => t.equal(data, null));
 });
 
 test.onFinish(() => process.exit(0));

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "onchange '*.js' 'lib/**/*.js' -- npm run spec",
-    "spec": "tape test.js",
+    "spec": "tape test.js | tap-spec",
     "test": "npm run lint && npm run spec",
     "lint": "eslint index.js lib"
   },
@@ -39,6 +39,7 @@
     "eslint-config-airbnb": "6.0.1",
     "onchange": "^2.0.0",
     "redis": "^2.4.2",
+    "tap-spec": "^4.1.1",
     "tape": "^4.4.0"
   },
   "dependencies": {
