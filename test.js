@@ -7,8 +7,8 @@ test('encode and decode', t => {
   t.plan(2);
 
   jsonappy({ foo: 'bar' }).then(buffer => {
-    t.equal(Buffer.isBuffer(buffer), true);
-    jsonappy(buffer).then(data => t.equal(data.foo, 'bar'));
+    t.equal(Buffer.isBuffer(buffer), true, 'encode');
+    jsonappy(buffer).then(data => t.equal(data.foo, 'bar', 'decode'));
   });
 });
 
