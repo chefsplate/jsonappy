@@ -1,6 +1,6 @@
 {
   "name": "jsonappy",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Snappy compress JSON for Redis and other providers.",
   "main": "index.js",
   "scripts": {
